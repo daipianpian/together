@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>个人中心</title>
+	<link rel="stylesheet" href="css/icon.css">
+  <link rel="stylesheet" href="css/person.css">
+  <link rel="stylesheet" type="text/css" href="css/basic.css">
+  <script src="js/jquery-1.8.2.js"></script>
+	<script src="js/nav_sub.js"></script>
+  <script src="placeImage.js"></script>
+  <script type="text/javascript" src="jquery.min.js"></script>
+<script type="text/javascript">
+$(function() {
+  var len = $("#focus ul li").length; //获取焦点图中的图片总数
+  var index = 0; //图片索引值默认为0
+  var picTimer; //声明一个时间变量备用
+  
+  var btn = "<div class='btn'>"; //btn变量用来在焦点图中添加按钮，由于是纯数字无实际意义，在这里使用jquery插入而不是直接存在于网页内容中，这样也方便于一些网站内容管理系统的生成。
+  for(i=0;i<len;i++) {
+    btn += "<span>" + (i+1) + "</span>";
+  }
+  btn += "</div>";
+  $("#focus").append(btn);
+
+  $("#focus .btn span").click(function() { //按钮的鼠标单击事件
+    index = $("#focus .btn span").index(this); //获取到被单击按钮的索引值（顺序）
+    showPic(index); //通过showPic()函数显示该索引值的图片
+  }).eq(0).click(); //初始化，默认显示索引值为0（第一张）的图片
+
+  $("#focus").hover(function() {
+    clearInterval(picTimer); //鼠标经过焦点图时停止自动播放
+  },function() {
+    picTimer = setInterval(function() {
+      showPic(index); //鼠标滑出时根据当前索引值继续自动播放
+      index++; //设置索引值为下一张图片
+      if(index==len) {index=0;} //如果索引值等于图片总数，下一次显示第一张图片
+    },3000); //3000定义执行以上语句的时间周期
+  }).trigger("mouseleave"); //初始化，触发鼠标滑出事件，即自动播放
+
+  function showPic(index) {
+    var picHeight = $("#focus ul li img").height(); //变量picHeight获取到图片的高度，当然也可以使用固定值而省略此步
+    $("#focus ul").stop(true,false).animate({top:-picHeight*index},300); //根据图片高度和当前图片的索引值，计算出ul向上的偏移量，再使用.animate()来移动它实现动画效果。结尾的“300”定义了移动速度
+    $("#focus .btn span").removeClass("on").eq(index).addClass("on");//根据index变量（索引值）给相应的按钮添加selected的类，并移除其它按钮的selected类
+  }
+});
+
+</script>
+
+      <script>
+window.onload = function ()
+{
+  var oLi = document.getElementById("tab").getElementsByTagName("li");
+  var oUl = document.getElementById("cont").getElementsByTagName("ul");
+  
+  for(var i = 0; i < oLi.length; i++)
+  {
+    oLi[i].index = i;
+    oLi[i].onmouseover = function ()
+    {
+      for(var n = 0; n < oLi.length; n++) oLi[n].className="";
+      this.className = "current";
+      for(var n = 0; n < oUl.length; n++) oUl[n].style.display = "none";
+      oUl[this.index].style.display = "block"
+    } 
+  }
+}
+</script>
+
+</head>
+<body>
+	<div id="hengtiao">
+        <!--=== header start ===-->
+		<div id="header">
+        
+			<p class="logo"><img src="images/logo1.png" alt=""></p>
+			<!--==== nav start ===-->
+			<ul class="nav">
+				<li><a href="">动态</a></li>
+				<li><a href="">搜索</a></li>
+				<li><a href="">表白墙</a></li>
+				<li><a href="">话题</a></li>
+				<li id="nav_sub"><a href="#">更多&nbsp;<span id="spanTip">↓</span></a>
+				  <ul class="nav_sub">
+				  	<li><a href="#">照片墙</a></li>
+				  	<li><a href="#">个人中心</a></li>
+				  </ul>
+                  <input id="hidval" type="hidden" value="0" />
+				</li>
+                <li class="exit">
+                  <img src="images/dynamic/exit.png" alt="exit" />
+                </li>
+			</ul>
+            <!--=== nav end ===-->
+
+		</div><!--=== header end ===-->
+	</div>
+    
+  <!--=== main start ===-->
+  <!--
+
+  		<div class="underload">
+           <img src="./images/02.jpg" alt="images"  class="upload"/>
+           <a>上传照片</a>
+     <INPUT id="file" type="file" size="20" name="file" runat="server">
+      </div>
+     -->
+     <div class="center">
+      <!--上传照片开始-->
+       <div class="upload">
+            <form class="up_l" enctype="multipart/form-data" name="form1">
+          <input id="f" type="file" name="f" onchange="change()" />
+          <div class="uploading"></div>
+          <p >
+            <img id="preview" alt="" name="pic" />
+          </p>
+        </form>
+         <!--上传照片结束-->
+         <div class="up_r">
+          <h3>秋水伊人<span>id:1534856</span></h3>
+          <p class="font">女&nbsp; 21岁&nbsp; 165cm&nbsp; 河南郑州&nbsp; 郑州大学西亚斯国际学院</p>
+          <p class="font">&nbsp;&nbsp;&nbsp;资料完整度</p>
+       <ul class="lable">
+         <li class="lab"><a href="###">微博控</a></li>
+         <li class="lab"><a href="###">旅行</a></li>
+         <li class="lab"><a href="###">摄影家</a></li>
+       </ul>
+         </div>
+       </div>
+
+       <div class="content">
+        
+            <li class="me"><q>向朋友介绍一下自己吧，比如兴趣爱好特长！</q></li>
+            <li class="picture">形象照(0)</li>
+            <img src="./images/01.jpg" alt="image" class="pic"/>
+            <p class="uppic">快上传自己的形象照吧，让更多的小伙伴认识你哦~~~</p>
+   
+        </div>
+        <!--tab选项卡开始-->
+
+     <div id="outer">
+        <ul id="tab">
+            <li class="current">我的动态</li>
+            <li>我的资料</li>
+            <li>我的相册</li>
+             <li>我的私信</li>
+        </ul>
+        <div id="cont">
+            <ul style="display:block;">
+              <!--说说回顾-->
+                <li class="news">
+                  <p>2012年发布：</p>
+                  <samp>细雨梦回，小楼吹彻玉笙寒。我的目光，湿在幽深雨巷边。当年你一去无回，别离的愁绪万千，纵使相知成陌路，我依然为你植下相思的玫瑰园</samp>
+                </li>
+                <li class="news">
+                  <p>2012年发布：</p>
+                  <samp>迷途的爱终究以悲剧收场，致使很多人爱过一次便不敢再爱，相信一个人以后便不再相信。其实又何必呢?岁月静好，安之若素。一入花间前庭梦落三千里，烧掉青春换一颗心长相守。人生如此而已，何必把自己伪装为情种情痴呢?</samp>
+                </li>
+                <li class="news">
+                  <p>2012年发布：</p>
+                  <samp>清泪莹莹，晕染了心上的一分浅愁;一帘幽梦，还原灵魂深处的那抹淡淡清秀。凝墨画你于烟雨疏柳，湖上的那一缕淡淡轻雾，应是你昨夜的温柔。</samp>
+                </li>
+                
+            </ul>
+            <!--说说回顾结束-->
+            <!--个人资料开始-->
+            <ul>
+                <li class="basic">
+              <h2>基本资料</h2>
+              <p><span>昵称：</span>秋水伊人</p> 
+              <p><span>性别： </span>     女</p>   
+              <p><span>婚姻状况：</span>未婚</p>  
+              <p><span>我在寻找：</span>恋人</p>  
+              <p><span>身高：</span>32</p> 
+              <p><span>体重：</span>32</p> 
+              <p><span>居住地：</span>32</p> 
+              <p><span>学历：</span>32</p>  
+              <p><span>毕业院系：</span>32</p> 
+              <p><span>行业：</span>32</p> 
+              <p><span>月收入：</span>32</p> 
+                </li>
+                <li class="basic">
+              <h2>详细资料</h2>
+              <p><span>昵称：</span>秋水伊人</p> 
+              <p><span>性别： </span>     女</p>   
+              <p><span>婚姻状况：</span>未婚</p>  
+              <p><span>我在寻找：</span>恋人</p>  
+              <p><span>身高：</span>32</p> 
+              <p><span>体重：</span>32</p> 
+              <p><span>居住地：</span>32</p> 
+              <p><span>学历：</span>32</p>  
+              <p><span>毕业院系：</span>32</p> 
+              <p><span>行业：</span>32</p> 
+              <p><span>月收入：</span>32</p> 
+                </li>
+              
+            </ul>
+            <!--个人资料开始-->
+            <!--我的相册开始-->
+             <ul>
+                <li>改变网页背景颜色</li>
+              
+            </ul>
+            <!--个人资料结束-->
+            <!--私信开始-->
+            <ul>
+                <li>JavaScript组成：ECMAScript、DOM、BOM，JavaScript兼容性来源</li>
+               
+            </ul>
+            <!--私信开始-->
+          </div>
+      </div>
+      <!--选项卡结束-->
+    </div>
+      <!--话题可见区域-->
+
+         <div class="right">
+           <h4>我参与的话题</h4>
+           <div id="piclist">
+           <div id="focus">
+        <ul>
+          <li><a href="#"><img src="./images/002.jpg" alt="54173BLOG" /></a></li>
+          <li><a href="#"><img src="./images/003.jpg" alt="焦点图合辑" /></a></li>
+
+          <li><a href="#"><img src="./images/004.jpg" alt="04" /></a></li>
+          <li><a href="#"><img src="./images/005.jpg" alt="05" /></a></li>
+          <li><a href="#"><img src="./images/001.jpg" alt="01" /></a></li>
+        </ul>
+      </div>
+      </div>
+          <p class="fire"><a href="#">→参与其他热门话题</a></p>
+         
+          <!--话题结束-->
+
+          <!--访客开始-->
+          <div class="dls">
+        <dl>
+            <dt class="per"><a href="###"><img src="./images/01.jpg" height="100" width="200"></a></dt>
+            <dd class="month">4月17号</dt>
+          </dl>
+          <dl>
+            <dt class="per"><a href="###"><img src="./images/02.jpg" height="100" width="200"></a></dt>
+            <dd class="month">4月17号</dt>
+          </dl>
+          <dl>
+            <dt class="per"><a href="###"><img src="./images/03.jpg" height="100" width="200"></a></dt>
+            <dd class="month">4月17号</dt>
+          </dl>
+          <dl>
+            <dt class="per"><a href="###"><img src="./images/03.jpg" height="100" width="200"></a></dt>
+            <dd class="month">4月17号</dt>
+          </dl>
+          <dl>
+            <dt class="per"><a href="###"><img src="./images/03.jpg" height="100" width="200"></a></dt>
+            <dd class="month">4月17号</dt>
+          </dl>
+          <dl>
+            <dt class="per"><a href="###"><img src="./images/03.jpg" height="100" width="200"></a></dt>
+            <dd class="month">4月17号</dt>
+          </dl>
+             <ul class="gtlist">
+              <li class="gt"><a href="###">> </a></li>
+              <li class="gt"><a href="###"><</a></li>
+          </ul>
+          </div>
+          <!--访客结束-->
+       
+            <p class="see">今日浏览：<span>12908</span> </p>
+            <p class="see">总浏览：<span>12908</span> </p>
+
+          
+
+
+
+
+
+                 </div>
+          
+       </div>
+    <!--=== content end ===-->
+    
+    <!--=== footer start ===-->
+    <div id="footer">
+        <a href="#">联系我们</a>
+        &nbsp;|&nbsp;
+        <a href="#">关于我们</a>
+        &nbsp;|&nbsp;
+        <a href="#">意见建议</a>
+        &nbsp;|&nbsp;
+        <a href="#">互动保护</a>
+        &nbsp;|&nbsp;
+        <a href="#">意思保护</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        西亚斯公司版权所有 &copy;2014-2015 豫E6-12365485
+    </div> 
+    <!--=== footer end ===-->
+     
+  </div>
+  <!--=== main end ===-->
+    
+   
+</body>
+</html>

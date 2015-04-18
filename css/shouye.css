@@ -1,0 +1,66 @@
+* {
+	margin: 0 auto;
+	padding: 0;
+}
+body {
+}
+ul, li {
+	list-style-type: none;
+}
+#top {
+	width: 100%;
+	height: 68px;
+	border-bottom: #FF4F86 solid 4px;
+}
+#header {
+	width: 940px;
+	color: #fff;
+	background: #00F;
+}
+.logo {
+	float: left;
+	padding: 12px;
+	margin-right: 90px;
+}
+.nav li {
+	width: 92px;
+	float: left;
+	margin-left: 5px;
+}
+.nav li a {
+	display: block;
+	text-align: center;
+	float: left;
+	width: 92px;
+	height: 68px;
+	line-height: 68px;
+	color: #333;
+	text-decoration: none;
+	font-size: 16px;
+	font-family: "微软雅黑";
+}
+.nav li a:hover {
+	color: #F39;
+}
+.sixin a {
+	background: url(../images/sixin-1.jpg) no-repeat center;
+}
+.sixin a:hover {
+	background: url(../images/sixin-2.jpg) no-repeat center;
+}
+#main {
+	width: 940px;
+}
+#content {
+	width: 940px;
+	height: 900px;
+	background: #0C3;
+}
+#footer {
+	width: 940px;
+	height: 115px;
+	line-height: 115px;
+	font-family: "微软雅黑";
+	font-size: 12px;
+	text-align: center;
+}

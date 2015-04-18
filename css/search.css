@@ -1,0 +1,231 @@
+#content {
+	font-family: "Microsoft YaHei";
+}
+#left {
+	width: 710px;
+	float: left;
+	background-color: #fff;
+	padding: 15px;
+}
+#left h1 {
+	font-size: 18px;
+	font-weight: normal;
+	color: #333;
+	padding-bottom: 10px;
+	border-bottom: 1px #ccc solid;
+}
+#select_list{width: 710px; height:auto; position:relative;}
+.select_list_top{
+	font-size:14px;
+	height:25px;
+	line-height:25px;
+	color:#333;
+	margin-top:12px;
+}
+.select_list_top span{margin-left:5px;}
+.areas{
+	width:110px;
+}
+.head_Por input{
+	position:absolute;
+	margin-top: 6px;
+}
+.head_Por span{ 
+	margin-left: 16px;
+}
+.select_list_top_search{
+	background-color: #64B0B0;
+	border: none;
+	color: #fff;
+	width: 40px;
+	text-align:center;
+	padding:3px 0;
+	margin-left: 5px;
+	border-radius: 1px;
+	cursor:pointer;
+}
+.more a{
+	margin-left:34px;
+	color:#333;
+}
+.more a:hover{
+	text-decoration:underline;
+}
+.select_list_main{ width:710px;margin-top:20px; padding-bottom:50px;}
+.select_list_main h3{ font-weight:normal; font-size:14px; color:#333333;width:678px;
+	padding:10px 15px; border:1px solid #999; background:#F8F8F8;}
+.select_list_main h3 select{padding:3px 0;color:#333333;}
+.select_list_main h3  span{ display:block; float:right;}
+.select_list_main_middle{ width:710px; height:auto;  margin-top:20px; background-color: pink;}
+.select_list_main_middle li{width:152px; float:left; margin-left:13px; margin-right:12px;}
+.select_list_main_middle li img{width:150px;height:150px; border:1px solid #ccc;}
+.select_list_main_middle li a p{width:152px;color:#666; font-size:12px; line-height:20px;}
+p.nickname{color:#333;font-size:14px;}
+.select_list_main_middle li a:hover img{border:1px solid #E64267;-webkit-transition: all .3s ease-in .1s;
+	-moz-transition: all .3s ease-in .1s;
+	-ms-transition: all .3s ease-in .1s;
+	-o-transition: all .3s ease-in .1s;
+	transition: all .3s ease-in .1s;
+}
+.select_list_main_middle li a:hover p{
+    color:#E64267;
+	-webkit-transition: all .3s ease-in .1s;
+	-moz-transition: all .3s ease-in .1s;
+	-ms-transition: all .3s ease-in .1s;
+	-o-transition: all .3s ease-in .1s;
+	transition: all .3s ease-in .1s;
+}
+a.like,a.hi{
+	margin-top:5px;
+	margin-bottom: 20px; 
+	border-radius: 3px;  
+	cursor:pointer;
+	display:block;
+	color:#333;
+	font-size:12px;
+	padding:6px 8px;
+	border:1px solid #ccc;
+	border-radius:3px;
+	-webkit-transition: all .2s ease-in .1s;
+	-moz-transition: all .3s ease-in .1s;
+	-ms-transition: all .3s ease-in .1s;
+	-o-transition: all .3s ease-in .1s;
+	transition: all .3s ease-in .1s;
+}
+a.like{float:left;}
+a.hi{float:right;}
+a.like:hover,a.hi:hover{color:#E64267; background:#FCF; border:1px solid #E64267;}
+
+/*select_list_main_bottom start*/
+.select_list_main_bottom{display:inline-block; width:710px;text-align:center; margin-top:30px;}
+.select_list_main_bottom a{ display:inline-block;margin:0 3px;padding:4px 12px; color:#333;border:1px solid #ccc;}
+.select_list_main_bottom a:hover{color:#E64267; background:#FCF; border:1px solid #E64267;
+-webkit-transition: all .3s ease-in .1s;
+	-moz-transition: all .3s ease-in .1s;
+	-ms-transition: all .3s ease-in .1s;
+	-o-transition: all .3s ease-in .1s;
+	transition: all .3s ease-in .1s;}
+
+#right {
+	width: 225px;
+	float: left;
+	margin-left: 15px;
+	padding:0 15px 15px 15px;
+}
+#right_select {
+	margin: 0 auto;
+	background: #fff;
+	padding: 11px;
+}
+#right_select h2 {
+	font-size: 18px;
+	font-weight: normal;
+	color: #333;
+	padding-bottom: 10px;
+	border-bottom: 1px #ccc solid
+}
+#right_select input {
+	height: 20px;
+	margin-top: 15px;
+}
+.select_01 {
+	width: 154px;
+	border: 1px #ccc solid;
+}
+.select_02 {
+	background-color: #64B0B0;
+	border: none;
+	color: #fff;
+	width: 40px;
+	margin-left: 5px;
+	border-radius: 1px;
+	cursor:pointer;
+}
+
+#topic{
+	width: 225px;
+	height: 155px;
+	float: left;
+	margin-top: 20px;
+	margin-bottom: 10px;
+}
+#topic ol{position:relative;width: 80px;height: 20px;top:-25px;left:65px;}
+#topic ol li{float:left;width: 10px;height: 10px;margin: 5px;background: #FAFAFA;}
+#topic ol li.seleted{cursor:pointer;background: #E64267;}
+
+/*左滑 样式*/
+.luara-left{position:relative;padding:0;overflow: hidden;}
+.luara-left ul{position: relative;padding: inherit;margin: 0;}
+.luara-left ul li{float: left;padding: inherit;margin: inherit;list-style: none;}
+.luara-left ul li img{width: 225px;height: 155px;-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+	-ms-border-radius: 8px;
+	-o-border-radius: 8px;
+	border-radius:2px;
+}
+#right h4{ font-weight: normal; font-size: 12px; line-height: 14px;} 
+#right h4 a{
+	display: inline-block;
+	text-align: left;
+	color: #666;
+	width: 213px;
+	margin-top: -10px;
+	padding: 10px 0px 7px 10px;
+	border-left:1px solid #ccc;
+	border-right:1px solid #ccc;
+	border-bottom:1px solid #ccc;
+	background: #E7E7E7;
+	-webkit-transition: all .3s ease-in .1s;
+	-moz-transition: all .3s ease-in .1s;
+	-ms-transition: all .3s ease-in .1s;
+	-o-transition: all .3s ease-in .1s;
+	transition: all .3s ease-in .1s;
+}
+#right h4 a:hover{color: #E64267;}
+.right-bottom {
+	width: 225px;
+	margin-top: 20px;
+	float: left;
+	margin-bottom: 10px;
+}
+.right-bottom li {
+	height: 36px;
+	color: #333;
+	padding: 11px 0 11px 10px;
+	line-height: 18px;
+	border-bottom: 1px solid #E6E6E8;
+	background-color: #FAFAFA;
+	-webkit-transition: all .3s ease-in .1s;
+	-moz-transition: all .3s ease-in .1s;
+	-ms-transition: all .3s ease-in .1s;
+	-o-transition: all .3s ease-in .1s;
+	transition: all .3s ease-in .1s;
+}
+.right-bottom li a{color: #333;}
+.right-bottom li a:hover,.right-bottom li a:hover p span{
+	color: #E64267;
+	background-color: #fff;
+	-webkit-transition: all .3s ease-in .1s;
+	-moz-transition: all .3s ease-in .1s;
+	-ms-transition: all .3s ease-in .1s;
+	-o-transition: all .3s ease-in .1s;
+	transition: all .3s ease-in .1s;
+}
+.right-bottom li img, .right-bottom li p {
+	float: left;
+}
+.right-bottom li p {
+    width: 125px;
+	margin-left: 8px;
+	font-family: "Microsoft YaHei";
+	font-size: 14px;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	vertical-align: bottom;
+}
+.right-bottom li a p span {
+	display: block;
+	color: #999;
+	font-size: 12px;
+}

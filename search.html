@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>搜索</title>
+    <link rel="stylesheet" type="text/css" href="css/basic.css">
+  <link rel="stylesheet" href="css/icon.css">
+    <link rel="stylesheet" href="css/search.css">
+    <link rel="stylesheet" type="text/css" href="css/jock-citypicker-2.0.css">
+     <!--必要样式-->
+  <link href="css/return.css" rel="stylesheet" type="text/css" />
+    
+    <script src="js/jquery-1.8.2.js"></script>
+    <script src="js/nav_sub.js"></script>
+    <script src="js/return.js"></script>
+
+    <script src="js/jquery.luara.0.0.1.min.js"></script>
+    <script src="js/jock-citypicker-2.0.min.js"></script>
+    <script src="js/city.js"></script>
+</head>
+<body>
+  <div id="hengtiao">
+        <!--=== header start ===-->
+    <div id="header"> 
+        
+      <p class="logo"><img src="images/logo1.png" alt=""></p>
+      <!--==== nav start ===-->
+      <ul class="nav"> 
+        <li><a href="">动态</a></li>
+        <li><a href="">搜索</a></li>
+        <li><a href="">表白墙</a></li>
+        <li><a href="">话题</a></li>
+        <li id="nav_sub"><a href="#">更多&nbsp;<span id="spanTip">↓</span></a>
+          <ul class="nav_sub">
+            <li><a href="#">照片墙</a></li>
+            <li><a href="#">个人中心</a></li>
+          </ul>
+                  <input id="hidval" type="hidden" value="0" />
+        </li>
+                <li class="exit">
+                  <img src="images/dynamic/exit.png" alt="exit" />
+                </li>
+      </ul>
+            <!--=== nav end ===-->
+
+    </div><!--=== header end ===-->
+  </div>
+    
+  <!--=== main start ===-->
+
+  <div id="main">
+    <!--=== content start ===-->
+  <div id="content">
+      <div id="left">
+         <h1>搜索</h1>
+         <div id="select_list">
+           <p class="select_list_top"><img src="images/search/search_icon.jpg" alt="search" /><span>我要找：<select name="friends">
+               <option value="0">男朋友</option>
+               <option value="1">女朋友</option></select></span> 
+               <span class="areas_span">地区：<input id="areas1" class="areas" type="text" name="city1" value="不限" readOnly="readOnly"/>
+               </span> 
+               <span>年龄：<select name="ages">
+               <option value="022">22</option>
+               <option value="023">23</option>
+               <option value="024">24</option>
+               <option value="025">25</option>
+               <option value="026">26</option></select> 到 <select name="ages">
+               <option value="022">22</option>
+               <option value="023">23</option>
+               <option value="024">24</option>
+               <option value="025">25</option>
+               <option value="026">26</option></select></span> <span class="head_Por"><input name="head_Portraits" type="checkbox" value=""><span>有头像</span></span><input type="button" value="搜索" class="select_list_top_search">
+           </p>
+           
+           <div class="select_list_main">
+             <h3>排序方式：<select name="ways"><option value="0">最后登录时间</option>
+               <option value="1">兴趣爱好</option>
+               <option value="2">相同地区</option></select>
+                 <span>共447459人符合条件</span>
+               </h3>
+             <ul class="select_list_main_middle">
+               <li>
+                 <a href="#">
+                    <img src="images/search/search_person_01.jpg" />
+                    <p><span class="nickname">宇宙无敌小超</span><br />26岁，上海普东新区<br />20条动态</p>
+                 </a>
+                 <p> 
+                    <a class="like" href="#">喜欢</a>
+                    <a class="hi" href="#">打招呼</a>
+                 </p>
+               </li>
+               <li>
+                 <a href="#">
+                    <img src="images/search/search_person_02.jpg" />
+                    <p><span class="nickname">wheatear</span><br />27岁，广东广州<br />11条动态</p>
+                 </a>
+                 <p> 
+                    <a class="like" href="#">喜欢</a>
+                    <a class="hi" href="#">打招呼</a>
+                 </p>
+               </li>
+               <li>
+                 <a href="#">
+                    <img src="images/search/search_person_03.jpg" />
+                    <p><span class="nickname">宇宙无敌小超</span><br />28岁，广东深圳<br />12条动态</p>
+                 </a>
+                 <p> 
+                    <a class="like" href="#">喜欢</a>
+                    <a class="hi" href="#">打招呼</a>
+                 </p>
+               </li>
+               <li>
+                 <a href="#">
+                    <img src="images/search/search_person_04.jpg" />
+                    <p><span class="nickname">宇宙无敌小超</span><br />26岁，上海普东新区<br />82条动态</p>
+                 </a>
+                 <p> 
+                    <a class="like" href="#">喜欢</a>
+                    <a class="hi" href="#">打招呼</a>
+                 </p>
+               </li>
+
+
+
+               <li>
+                 <a href="#">
+                    <img src="images/search/search_person_05.jpg" />
+                    <p><span class="nickname">Jill</span><br />25岁，香港香港<br />8条动态</p>
+                 </a>
+                 <p> 
+                    <a class="like" href="#">喜欢</a>
+                    <a class="hi" href="#">打招呼</a>
+                 </p>
+               </li>
+               <li>
+                 <a href="#">
+                    <img src="images/search/search_person_06.jpg" />
+                    <p><span class="nickname">Leslie</span><br />24岁，广东珠海<br />2条动态</p>
+                 </a>
+                 <p> 
+                    <a class="like" href="#">喜欢</a>
+                    <a class="hi" href="#">打招呼</a>
+                 </p>
+               </li>
+               <li>
+                 <a href="#">
+                    <img src="images/search/search_person_07.jpg" />
+                    <p><span class="nickname">chen火</span><br />24岁，安徽安庆<br />9条动态</p>
+                 </a>
+                 <p> 
+                    <a class="like" href="#">喜欢</a>
+                    <a class="hi" href="#">打招呼</a>
+                 </p>
+               </li>
+               <li>
+                 <a href="#">
+                    <img src="images/search/search_person_08.jpg" />
+                    <p><span class="nickname">focus</span><br />26岁，陕西西安<br />9条动态</p>
+                 </a>
+                 <p> 
+                    <a class="like" href="#">喜欢</a>
+                    <a class="hi" href="#">打招呼</a>
+                 </p>
+               </li>
+             </ul>
+
+             
+
+             
+
+             <p class="select_list_main_bottom">
+                 <a href="#">&laquo;上一页</a>
+                 <a href="#">1</a>
+                 <a href="#">2</a>
+                 <a href="#">3</a>
+                 <a href="#">4</a>
+                 <a href="#">5</a>
+                 <a href="#">6</a>
+                 <a href="#">&#8230;</a>
+                 <a href="#">100</a>
+                 <a href="#">下一页&raquo;</a>
+             </p>
+             
+           </div>
+         </div>
+   
+      </div>
+      <!--=left-end=-->
+      <div id="right">
+          <div id="right_select">
+             <h2>按会员ID搜索</h2>
+               <input type="text" class="select_01"><input type="button" value="搜索" class="select_02">
+          </div>
+
+          <div id="topic">
+            <ul>
+                <li><img src="images/dynamic/1.jpg" alt="1"/></li>
+                <li><img src="images/dynamic/2.jpg" alt="2"/></li>
+                <li><img src="images/dynamic/3.jpg" alt="3"/></li>
+                <li><img src="images/dynamic/4.jpg" alt="4"/></li>
+            </ul>
+            <ol>
+                <li></li>
+                <li></li>
+                <li></li> 
+                <li></li>
+            </ol>
+          </div>
+          <!--Luara end-->
+          <script>
+              $(function(){
+                  $("#topic").luara({width:"225",height:"155",interval:4500,selected:"seleted",deriction:"left"});
+              });
+          </script>
+          
+          <h4><a href="#">→参与其他热门话题</a></h4>
+
+          <div id="right-bot">
+          
+            <ul class="right-bottom">
+              <li>
+               <a href="#">
+                <img class="right-bottom-tx" src="images/search/search_right_tx01.jpg">
+                <p>白檀<span>一只来自日本的土猫</span>
+                </p>
+                <img src="images/dynamic/add.png" />
+               </a>
+              </li>
+              
+              <li>
+               <a href="#">
+                <img class="right-bottom-tx" src="images/search/search_right_tx02.jpg">
+                <p>Miro<span>及时摄影师</span>
+                </p>
+                <img src="images/dynamic/add.png" />
+               </a>
+              </li>
+              
+            </ul>
+           </div> 
+
+           <h4><a href="#">→更多明星会员</a></h4>
+
+
+      </div>
+       <!--=right-end=--> 
+  </div>
+    <!--=== content end ===-->
+    
+    <!--=== footer start ===-->
+    <div id="footer">
+        <a href="#">联系我们</a>
+        &nbsp;|&nbsp;
+        <a href="#">关于我们</a>
+        &nbsp;|&nbsp;
+        <a href="#">意见建议</a>
+        &nbsp;|&nbsp;
+        <a href="#">互动保护</a>
+        &nbsp;|&nbsp;
+        <a href="#">意思保护</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        西亚斯公司版权所有 &copy;2014-2015 豫E6-12365485
+    </div> 
+    <!--=== footer end ===-->
+     
+  </div>
+  <!--=== main end ===-->
+
+  <!--必要代码-->
+  
+<ul id="side-bar" class="side-pannel side-bar">
+  <a href="javascript:;" class="gotop" style="display:none;"><s class="g-icon-top"></s></a>
+  <a href="javascript:;" class="qr"><s class="g-icon-qr1"></s><i></i></a>
+  <a href="#" class="text survey"><s class="g-icon-survey1"></s><span>意见反馈</span></a>
+</ul>
+    
+    
+
+</body>
+</html>

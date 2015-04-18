@@ -1,0 +1,119 @@
+#content {
+	font-family: "Microsoft YaHei";
+}
+/*left start*/
+#left {
+	width: 710px;
+	float: left;
+	background-color: #fff;
+	padding: 15px;
+}
+.topic_main{display:inline-block;width: 710px;height:auto; margin-bottom:30px;paading-bottom:20px;border-bottom:1px dashed #999;}
+.topic_main h1{
+	width: 710px;
+	font-size: 16px;
+	color: #333;
+	padding-bottom: 10px;
+}
+.topic_main p{
+   color: #666;
+   font-size: 14px;
+   font-family: "Microsoft YaHei";
+}
+.topic_main ul{width: 710px; display:inline-block; margin-top:10px;}
+.topic_main ul li{width:130px; height: 130px;margin:6px 12px 6px 0;float: left;}
+.topic_main ul li img{width:130px; height: 130px;}
+.topic_main a{ display: block; width: 40px;height: 40px; line-height: 40px; text-align: center; 
+	color: #fff; font-family: "Microsoft YaHei"; font-size: 14px;
+   float: left;
+   margin-left: 90px;
+   margin-top: -44px;
+	background-color: #333; 
+	opacity: 0.5;
+	z-index: 1;
+}
+.topic_main a:hover{color: red;background-color: #fff; -webkit-transition: all .3s ease-in .1s;
+    -moz-transition: all .3s ease-in .1s;
+    -ms-transition: all .3s ease-in .1s;
+    -o-transition: all .3s ease-in .1s;
+    transition: all .3s ease-in .1s;
+}
+.topic_personInfo{padding-bottom:55px;}
+.personFavicon{float: left; width: 25px; height: 25px;}
+.personInfo{display:inline-block;float:left;height: 25px;line-height: 25px; margin-left: 8px;}
+.personInfo span{font-size: 12px; margin-left: 5px;}
+.topic_main span.personLike{ display:inline-block;float:right;height:25px; line-height:25px;font-size: 12px; margin-right:11px;}
+/*left end*/
+
+/*right start*/
+#right {
+	width: 225px;
+	float: left;
+	margin-left: 15px;
+}
+.right_topicCategory {
+	margin: 0 auto;
+	background: #fff;
+	padding: 5px;
+}
+.right_topicCategory a{
+	display: inline-block;
+	padding: 7px 9px;
+	border:1px solid #ccc;
+	border-radius: 2px;
+	color: #666;
+	font-size: 14px;
+	font-family: "Microsoft YaHei";
+	margin:5px 0 5px 15px;
+}
+.right_topicCategory a:hover{color:#E64267; background:#FCF; border:1px solid #E64267;
+-webkit-transition: all .3s ease-in .1s;
+	-moz-transition: all .3s ease-in .1s;
+	-ms-transition: all .3s ease-in .1s;
+	-o-transition: all .3s ease-in .1s;
+	transition: all .3s ease-in .1s;
+}
+
+.right-bottom {
+	width: 225px;
+}
+.right-bottom h4{ font-weight: normal; font-size: 14px; line-height: 14px; margin-top: 15px;
+text-align: left;
+	color: #666;
+	width: 213px;
+	padding: 11px 0 11px 10px;
+	border-left:1px solid #ccc;
+	border-right:1px solid #ccc;
+	border-top:1px solid #ccc;
+	background: #E7E7E7;
+} 
+.right-bottom p a {
+	display: inline-block;
+	width: 204px;
+	color: #333;
+	padding: 11px 10px 11px 10px;
+	line-height: 18px;
+	border-bottom: 1px solid #E6E6E8;
+	background-color: #FAFAFA;
+	-webkit-transition: all .3s ease-in .1s;
+	-moz-transition: all .3s ease-in .1s;
+	-ms-transition: all .3s ease-in .1s;
+	-o-transition: all .3s ease-in .1s;
+	transition: all .3s ease-in .1s;
+}
+.right-bottom p a{color: #333;font-family: "Microsoft YaHei";
+	font-size: 12px;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	vertical-align: bottom;
+}
+.right-bottom a:hover{
+	color: #E64267;
+	background-color: #fff;
+	-webkit-transition: all .3s ease-in .1s;
+	-moz-transition: all .3s ease-in .1s;
+	-ms-transition: all .3s ease-in .1s;
+	-o-transition: all .3s ease-in .1s;
+	transition: all .3s ease-in .1s;
+}
