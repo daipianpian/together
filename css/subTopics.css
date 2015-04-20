@@ -58,13 +58,13 @@
 }
 .right_topicCategory a{
 	display: inline-block;
-	padding: 7px 9px;
+	padding: 7px 15px;
 	border:1px solid #ccc;
 	border-radius: 2px;
 	color: #666;
 	font-size: 14px;
 	font-family: "Microsoft YaHei";
-	margin:5px 0 5px 15px;
+	margin:5px 0 5px 6px;
 }
 .right_topicCategory a:hover{color:#E64267; background:#FCF; border:1px solid #E64267;
 -webkit-transition: all .3s ease-in .1s;
