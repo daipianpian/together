@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>表白墙</title>
+    <link rel="stylesheet" type="text/css" href="css/basic.css">
+  <link rel="stylesheet" href="css/icon.css">
+    <link rel="stylesheet" href="css/profess.css">
+    <link rel="stylesheet" href="css/kindeditor.css">
+     <!--必要样式-->
+    <link href="css/return.css" rel="stylesheet" type="text/css" />
+    
+    <script src="js/jquery-1.8.2.js"></script>
+    <script src="js/nav_sub.js"></script>
+    <script src="js/kindeditor-min.js"></script>
+    <script src="js/zh_CN.js"></script>
+    <script src="js/return.js"></script> 
+    <script>
+      var editor;
+      KindEditor.ready(function(K) {
+        editor = K.create('textarea[name="content"]', {
+          resizeType : 1,
+          allowPreviewEmoticons : false,
+          allowImageUpload : false,
+          items : [
+            'fontname', 'fontsize', '|', 'forecolor', 'hilitecolor', 'bold', 'italic', 'underline']
+        });
+      });
+    </script>
+</head>
+<body>
+  <div id="hengtiao">
+        <!--=== header start ===-->
+    <div id="header"> 
+        
+      <p class="logo"><img src="images/logo1.png" alt=""></p>
+      <!--==== nav start ===-->
+      <ul class="nav"> 
+        <li><a href="">动态</a></li>
+        <li><a href="">搜索</a></li>
+        <li><a href="">表白墙</a></li>
+        <li><a href="">话题</a></li>
+        <li id="nav_sub"><a href="#">更多&nbsp;<span id="spanTip">↓</span></a>
+          <ul class="nav_sub">
+            <li><a href="#">照片墙</a></li>
+            <li><a href="#">个人中心</a></li>
+          </ul>
+                  <input id="hidval" type="hidden" value="0" />
+        </li>
+                <li class="exit">
+                  <img src="images/dynamic/exit.png" alt="exit" />
+                </li>
+      </ul>
+            <!--=== nav end ===-->
+
+    </div><!--=== header end ===-->
+  </div>
+    
+  <!--=== main start ===-->
+
+  <div id="main">
+    <!--=== content start ===-->
+  <div id="content">
+      <!--=left-start=-->
+      <div id="left">
+         <ul>
+           <li><a href="#"><img src="images/profess/001.jpg"></a></li>
+           <li><a href="#"><img src="images/profess/002.jpg"></a></li>
+           <li><a href="#"><img src="images/profess/003.jpg"></a></li>
+           <li><a href="#"><img src="images/profess/004.jpg"></a></li>
+           <li><a href="#"><img src="images/profess/005.jpg"></a></li>
+         </ul>
+      </div>
+      <!--=left-end=-->
+
+      <!--=right-start=--> 
+      <div id="right">
+        <div class="bg_pic"></div>
+        <div class="right_text">
+          <h1>表白标题：<input type="text" value="晓玲，我爱你！" onfocus="if (value =='晓玲，我爱你！'){value =''}" onblur="if (value ==''){value='晓玲，我爱你！'}" /></h1>
+          <form>
+            <textarea name="content"></textarea>
+          </form>
+          <div class="right-button">
+          <input type="button" value="在线预览" />
+          <input type="button" value="发表到公共表白墙" />
+          <input type="button" value="发送到私信" />
+          </div>
+        </div>
+      </div>
+       <!--=right-end=--> 
+  </div>
+    <!--=== content end ===-->
+    
+    <!--=== footer start ===-->
+    <div id="footer">
+        <a href="#">联系我们</a>
+        &nbsp;|&nbsp;
+        <a href="#">关于我们</a>
+        &nbsp;|&nbsp;
+        <a href="#">意见建议</a>
+        &nbsp;|&nbsp;
+        <a href="#">互动保护</a>
+        &nbsp;|&nbsp;
+        <a href="#">意思保护</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        西亚斯公司版权所有 &copy;2014-2015 豫E6-12365485
+    </div> 
+    <!--=== footer end ===-->
+     
+  </div>
+  <!--=== main end ===-->
+
+  <!--必要代码-->
+  
+<ul id="side-bar" class="side-pannel side-bar">
+  <a href="javascript:;" class="gotop" style="display:none;"><s class="g-icon-top"></s></a>
+  <a href="javascript:;" class="qr"><s class="g-icon-qr1"></s><i></i></a>
+  <a href="#" class="text survey"><s class="g-icon-survey1"></s><span>意见反馈</span></a>
+</ul>
+    
+    
+
+</body>
+</html>
