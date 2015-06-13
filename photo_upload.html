@@ -4,8 +4,7 @@
 	<meta charset="UTF-8">
 	<title>搜索</title>
     <link rel="stylesheet" type="text/css" href="css/basic.css">
-    <script src="js/jquery-1.8.2.js"></script>
-	<script src="js/nav_sub.js"></script>
+  <link rel="stylesheet" href="css/zyUpload.css" type="text/css">
 </head>
 <body>
 	<div id="hengtiao">
@@ -15,21 +14,19 @@
 			<p class="logo"><img src="images/logo1.png" alt=""></p>
 			<!--==== nav start ===-->
 			<ul class="nav">
-				<li><a href="">动态</a></li>
-				<li><a href="">搜索</a></li>
-				<li><a href="">表白墙</a></li>
-				<li><a href="">话题</a></li>
-				<li id="nav_sub"><a href="#">更多&nbsp;<span id="spanTip">↓</span></a>
-				  <ul class="nav_sub">
-				  	<li><a href="#">照片墙</a></li>
-				  	<li><a href="#">个人中心</a></li>
-				  </ul>
-                  <input id="hidval" type="hidden" value="0" />
-				</li>
-                <li class="exit">
-                  <img src="images/dynamic/exit.png" alt="exit" />
-                </li>
-			</ul>
+      <li><a href="dongtai.html">动态</a></li>
+      <li><a href="search.html">搜索</a></li>
+      <li><a href="confession_show.html">表白墙</a></li>
+      <li><a href="topic.html">话题</a></li>
+      <li id="nav_sub"><a href="#">更多&nbsp;<span id="spanTip">↓</span></a>
+        <ul class="nav_sub">
+          <li><a href="photoes_show.html">照片墙</a></li>
+          <li><a href="person.html">个人中心</a></li>
+        </ul>
+        <input id="hidval" type="hidden" value="0" />
+      </li>
+      <li class="exit"> <img src="images/dynamic/exit.png" alt="exit" /> </li>
+    </ul>
             <!--=== nav end ===-->
 
 		</div><!--=== header end ===-->
@@ -39,9 +36,13 @@
   <div id="main">
     <!--=== content start ===-->
 	<div id="content">
-        
-             
-        
+    <h2>我要发布....Duang!!!</h2>
+    <div id="div1">
+        <p>说说吧...</p>
+        <textarea id="textarea" placeholder="这一刻的想法..."></textarea>
+    </div>
+    <div id="demo" class="demo"></div>
+     <h4><button>点我上传</button></h4> 
 	</div>
     <!--=== content end ===-->
     
@@ -61,8 +62,83 @@
     <!--=== footer end ===-->
      
   </div>
+  <script src="js/jquery-1.8.2.js"></script>
+   <script src="js/nav_sub.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <!-- 引用核心层插件 -->
+    <script src="js/zyFile.js"></script>
+    <!-- 引用控制层插件 -->
+    <script src="js/zyUpload.js"></script>
+    <!-- 引用初始化JS -->
+    <script src="js/script.js"></script>
   <!--=== main end ===-->
-    
+   <script type="text/javascript">
+$(function(){
+  
+  //设置一个定时器，为BUTTON点击事件用
+  var timer=null;
+  var number1=0;
+  
+  //文本框获得焦点和失去焦点时的事件
+  $('#textarea').focus(function(){
+    if($(this).val()==''){
+      $(this).siblings('p').html('发言遵守“7条底线”，还可以输入<span>140</span>字').css({'color':'#999','cursor':''});
+    }
+  }).blur(function(){
+    if($(this).val()==''){
+      $(this).css('background-color','white').siblings('p').html('说说吧...').css({'color':'#ccc',});
+    }
+  });
+  
+  //文本输入时改变
+  $('#textarea').keyup(function(){
+    if(!$(this).val()==''){
+      $('button').removeClass('dis');
+    }else{
+      $('button').addClass('dis');
+    }
+    //Math函数向上取值
+    var iNum=Math.ceil(getLength($(this).val())/2);
+    if(iNum<=140){
+      $('#div1 span').html(140-iNum).css('color','');
+    }else{
+      $('#div1 span').html(iNum-140).css('color','red');
+      $('button').addClass('dis');
+    }
+  });
+  
+  //处理输入的内容是文字还是字母的函数
+  function getLength(str){
+    return String(str).replace(/[^\x00-\xff]/g,'aa').length;
+  };
+  
+  //绑定按钮事件，当文本框为空时点击背景色会闪动
+  $('.button').click(function(){
+    if($(this).hasClass('dis')){
+      clearInterval(timer);
+      timer=setInterval(function(){
+        if(number1==4){
+          clearInterval(timer);
+          number1=0;
+        }else{
+          number1++;
+        }
+        if(number1%2){
+          $('#textarea').css('background-color','#FFD9D9');
+        }else{
+          $('#textarea').css('background-color','');
+        }
+      },200);
+    }else{
+      alert('已成功发布！');
+      $('#textarea').val('');
+      $(this).addClass('dis');
+      $('#textarea').blur();
+    }
+  });
+
+});
+</script> 
     
 
 </body>

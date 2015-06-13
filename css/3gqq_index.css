@@ -1,0 +1,79 @@
+
+.pro-switch { 	height: 170px; 
+ 				width:225px;
+ 				overflow: hidden; 
+ 				position: relative;
+ 				padding-bottom:30px;
+ 				margin-left: 8px;
+}
+	.flexslider {margin: 0; padding: 0;}
+	.slider{ width:230px; height:180px;}
+	.flexslider .slides > li {display: none; -webkit-backface-visibility: hidden;} 
+	.flexslider .slides .dls {
+	 				display: block;
+					float:left;
+					padding-top: 10px;	
+					padding-bottom: 20px;
+					}
+		.dls dl{
+			width: 65px;
+			padding-left: 10px;
+			float: left;
+		}
+		.per{height: 55px;width: 60px;  }
+		.per a {display:block;
+			float: left;
+		}
+		.per img{height:55px;width:55px; border-radius: 5px;}
+		.month{ 
+			font-size: 12px;
+			height:20px;
+			padding: 5px;
+			
+			}
+			.month a{color:#666; text-decoration: none;}
+			.month a:hover{color:#999;}
+
+.slides:after {
+	content: "."; 
+	display: block; 
+	clear: both; 
+	visibility: hidden; 
+	line-height: 0; 
+	height: 0;
+		} 
+html[xmlns] .slides {display: block;} 
+* html .slides {height: 450px;}
+.no-js .slides > li:first-child {display: block;}
+.flexslider {
+	 width:240px; 
+	 zoom: 1;
+	}
+.flex-viewport {
+	max-height: 2000px; 
+	-webkit-transition: all 1s ease;
+	 -moz-transition: all 1s ease;
+	  transition: all 1s ease;
+	}
+	.flexslider .slides {zoom: 1;}
+	.flex-direction-nav {*height: 0;}
+	.flex-direction-nav a {
+						width:20px; 
+						height:20px;
+						display: block;
+						background:url(../images/ad_ctr.png);
+						  opacity:1;
+						     z-index:10;
+						      cursor: pointer;
+						       text-indent: -99999px;
+						         filter:alpha(opacity=0); -webkit-transition: all .3s ease;
+						     }
+.flex-direction-nav .flex-next {position: absolute;
+	top:178px;
+	background-position: -2px -2px;
+	left:120px; }
+.flex-direction-nav .flex-prev {position: absolute;
+	top:178px;right:110px;background-position:-36px -2px;}
+.flexslider:hover .flex-next {opacity: 0.8;filter:alpha(opacity=25); }
+.flexslider:hover .flex-prev {opacity: 0.8;filter:alpha(opacity=25);}
+.flexslider:hover .flex-next:hover, .flexslider:hover .flex-prev:hover {opacity: 1;filter:alpha(opacity=50);}

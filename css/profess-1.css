@@ -21,6 +21,12 @@
 	width: 225px;
 	height: 170px;
 }
+#left ul li.pic_first{
+	margin: 0 0 15px 0;
+}
+#left ul li.pic_last{
+	margin: 15px 0 0 0;
+}
 /*right*/
 #right {
 	width: 683px;
@@ -34,7 +40,6 @@
 .bg_pic{
 	width: 680px;
 	height: 450px;
-	background-color: pink;
 }
 .bg_pic img{
 	width: 680px;

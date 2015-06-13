@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>话题发布</title>
+    <link rel="stylesheet" type="text/css" href="css/basic.css">
+  <link rel="stylesheet" href="css/icon.css">
+    <link rel="stylesheet" href="css/topic_release.css">
+    <link rel="stylesheet" href="css/kindeditor.css">
+     <!--必要样式-->
+  <link href="css/return.css" rel="stylesheet" type="text/css" />
+    
+    <script src="js/jquery-1.8.2.js"></script>
+    <script src="js/nav_sub.js"></script>
+    <script src="js/return.js"></script> 
+</head>
+<body>
+  <div id="hengtiao">
+        <!--=== header start ===-->
+    <div id="header">
+        
+      <p class="logo"><img src="images/logo1.png" alt=""></p>
+      <!--==== nav start ===-->
+    <ul class="nav">
+      <li><a href="dongtai.html">动态</a></li>
+      <li><a href="search.html">搜索</a></li>
+      <li><a href="confession_show.html">表白墙</a></li>
+      <li><a href="topic.html">话题</a></li>
+      <li id="nav_sub"><a href="#">更多&nbsp;<span id="spanTip">↓</span></a>
+        <ul class="nav_sub">
+          <li><a href="photoes_show.html">照片墙</a></li>
+          <li><a href="person.html">个人中心</a></li>
+        </ul>
+        <input id="hidval" type="hidden" value="0" />
+      </li>
+      <li class="exit"> <img src="images/dynamic/exit.png" alt="exit" /> </li>
+    </ul>
+            <!--=== nav end ===-->
+
+    </div><!--=== header end ===-->
+  </div>
+    
+  <!--=== main start ===-->
+
+  <div id="main">
+    <!--=== content start ===-->
+  <div id="content">  
+     <div id="content-main">    
+        <h1><span>+</span>发布话题</h1>
+        <div class="content-main_text">
+          <h1><select>
+            <option>摄影</option>
+            <option>吃货</option>
+            <option>设计</option>
+            <option>时尚</option>
+            <option>生活</option>
+            <option>旅游</option>
+            <option>音乐</option>
+            <option>读书</option>
+            <option>游戏</option>
+            <option>IT科技</option>
+          </select><input type="text" value="话题标题" onfocus="if (value =='话题标题'){value =''}" onblur="if (value ==''){value='话题标题'}" /></h1>
+          <textarea value="话题内容" onfocus="if (value =='话题内容'){value =''}" onblur="if (value ==''){value='话题内容'}" >话题内容</textarea>
+
+          <div id="demo" class="demo"></div>
+          <h4><button>发布话题</button></h4> 
+        </div>
+     </div>
+      <!--=content-main-end=-->
+
+  </div>
+    <!--=== content end ===-->
+    
+    <!--=== footer start ===-->
+    <div id="footer">
+        <a href="#">联系我们</a>
+        &nbsp;|&nbsp;
+        <a href="#">关于我们</a>
+        &nbsp;|&nbsp;
+        <a href="#">意见建议</a>
+        &nbsp;|&nbsp;
+        <a href="#">互动保护</a>
+        &nbsp;|&nbsp;
+        <a href="#">意思保护</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        西亚斯公司版权所有 &copy;2014-2015 豫E6-12365485
+    </div> 
+    <!--=== footer end ===-->
+     
+  </div>
+  <!--=== main end ===-->
+
+  <!--必要代码-->
+  
+<ul id="side-bar" class="side-pannel side-bar">
+  <a href="javascript:;" class="gotop" style="display:none;"><s class="g-icon-top"></s></a>
+  <a href="javascript:;" class="qr"><s class="g-icon-qr1"></s><i></i></a>
+  <a href="#" class="text survey"><s class="g-icon-survey1"></s><span>意见反馈</span></a>
+</ul>
+    
+     <!-- 引用核心层插件 -->
+    <script src="js/zyFile.js"></script>
+    <!-- 引用控制层插件 -->
+    <script src="js/zyUpload.js"></script>
+    <!-- 引用初始化JS -->
+    <script src="js/script.js"></script>
+  <!--=== main end ===-->
+</body>
+</html>

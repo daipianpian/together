@@ -58,16 +58,19 @@
 .select_list_main h3  span{ display:block; float:right;}
 .select_list_main_middle{ width:710px; height:auto;  margin-top:20px; background-color: pink;}
 .select_list_main_middle li{width:152px; float:left; margin-left:13px; margin-right:12px;}
+
 .select_list_main_middle li img{width:150px;height:150px; border:1px solid #ccc;}
-.select_list_main_middle li a p{width:152px;color:#666; font-size:12px; line-height:20px;}
+.select_list_main_middle li p{color:#666; font-size:12px; line-height:20px;}
+.select_list_main_middle li p.infor a{width:152px;color:#666;}
 p.nickname{color:#333;font-size:14px;}
+
 .select_list_main_middle li a:hover img{border:1px solid #E64267;-webkit-transition: all .3s ease-in .1s;
 	-moz-transition: all .3s ease-in .1s;
 	-ms-transition: all .3s ease-in .1s;
 	-o-transition: all .3s ease-in .1s;
 	transition: all .3s ease-in .1s;
 }
-.select_list_main_middle li a:hover p{
+.select_list_main_middle li p.infor a:hover{
     color:#E64267;
 	-webkit-transition: all .3s ease-in .1s;
 	-moz-transition: all .3s ease-in .1s;

@@ -1,71 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head>     
 	<meta charset="UTF-8">
 	<title>个人中心</title>
 	<link rel="stylesheet" href="css/icon.css">
   <link rel="stylesheet" href="css/person.css">
+<link rel="stylesheet" type="text/css" href="css/3gqq_index.css" />
   <link rel="stylesheet" type="text/css" href="css/basic.css">
   <script src="js/jquery-1.8.2.js"></script>
 	<script src="js/nav_sub.js"></script>
-  <script src="placeImage.js"></script>
-  <script type="text/javascript" src="jquery.min.js"></script>
+  <script src="js/preview2.js"></script>
+  <script src="js/placeImage.js"></script>
+  <script src="js/xuanxiangka.js"></script>
+  <script src="js/fire.js"></script>
+  <script defer src="js/slider.js"></script> 
 <script type="text/javascript">
-$(function() {
-  var len = $("#focus ul li").length; //获取焦点图中的图片总数
-  var index = 0; //图片索引值默认为0
-  var picTimer; //声明一个时间变量备用
-  
-  var btn = "<div class='btn'>"; //btn变量用来在焦点图中添加按钮，由于是纯数字无实际意义，在这里使用jquery插入而不是直接存在于网页内容中，这样也方便于一些网站内容管理系统的生成。
-  for(i=0;i<len;i++) {
-    btn += "<span>" + (i+1) + "</span>";
-  }
-  btn += "</div>";
-  $("#focus").append(btn);
-
-  $("#focus .btn span").click(function() { //按钮的鼠标单击事件
-    index = $("#focus .btn span").index(this); //获取到被单击按钮的索引值（顺序）
-    showPic(index); //通过showPic()函数显示该索引值的图片
-  }).eq(0).click(); //初始化，默认显示索引值为0（第一张）的图片
-
-  $("#focus").hover(function() {
-    clearInterval(picTimer); //鼠标经过焦点图时停止自动播放
-  },function() {
-    picTimer = setInterval(function() {
-      showPic(index); //鼠标滑出时根据当前索引值继续自动播放
-      index++; //设置索引值为下一张图片
-      if(index==len) {index=0;} //如果索引值等于图片总数，下一次显示第一张图片
-    },3000); //3000定义执行以上语句的时间周期
-  }).trigger("mouseleave"); //初始化，触发鼠标滑出事件，即自动播放
-
-  function showPic(index) {
-    var picHeight = $("#focus ul li img").height(); //变量picHeight获取到图片的高度，当然也可以使用固定值而省略此步
-    $("#focus ul").stop(true,false).animate({top:-picHeight*index},300); //根据图片高度和当前图片的索引值，计算出ul向上的偏移量，再使用.animate()来移动它实现动画效果。结尾的“300”定义了移动速度
-    $("#focus .btn span").removeClass("on").eq(index).addClass("on");//根据index变量（索引值）给相应的按钮添加selected的类，并移除其它按钮的selected类
-  }
-});
-
-</script>
-
-      <script>
-window.onload = function ()
+    $(function(){
+      $('.flexslider').flexslider({
+        animation: "slide",
+        start: function(slider){
+          $('body').removeClass('###');
+        }
+      });
+    });
+  </script>
+  <script type="text/javascript" src="jquery.min.js"></script>
+  <!--资料填写，双击改变状态-->
+  <script type="text/javascript">
+function ShowElement(element)
 {
-  var oLi = document.getElementById("tab").getElementsByTagName("li");
-  var oUl = document.getElementById("cont").getElementsByTagName("ul");
-  
-  for(var i = 0; i < oLi.length; i++)
-  {
-    oLi[i].index = i;
-    oLi[i].onmouseover = function ()
-    {
-      for(var n = 0; n < oLi.length; n++) oLi[n].className="";
-      this.className = "current";
-      for(var n = 0; n < oUl.length; n++) oUl[n].style.display = "none";
-      oUl[this.index].style.display = "block"
-    } 
-  }
+var oldhtml = element.innerHTML;
+var newobj = document.createElement('input');//创建新的input元素
+newobj.type = 'text';//为新增元素添加类型
+newobj.onblur = function(){
+element.innerHTML = this.value ? this.value : oldhtml;//当触发时判断新增元素值是否为空，为空则不修改，并返回原有值 
+}
+element.innerHTML = '';
+element.appendChild(newobj);
+newobj.focus();
 }
 </script>
+  
 
 </head>
 <body>
@@ -76,45 +51,37 @@ window.onload = function ()
 			<p class="logo"><img src="images/logo1.png" alt=""></p>
 			<!--==== nav start ===-->
 			<ul class="nav">
-				<li><a href="">动态</a></li>
-				<li><a href="">搜索</a></li>
-				<li><a href="">表白墙</a></li>
-				<li><a href="">话题</a></li>
-				<li id="nav_sub"><a href="#">更多&nbsp;<span id="spanTip">↓</span></a>
-				  <ul class="nav_sub">
-				  	<li><a href="#">照片墙</a></li>
-				  	<li><a href="#">个人中心</a></li>
-				  </ul>
-                  <input id="hidval" type="hidden" value="0" />
-				</li>
-                <li class="exit">
-                  <img src="images/dynamic/exit.png" alt="exit" />
-                </li>
-			</ul>
+      <li><a href="dongtai.html">动态</a></li>
+      <li><a href="search.html">搜索</a></li>
+      <li><a href="confession_show.html">表白墙</a></li>
+      <li><a href="topic.html">话题</a></li>
+      <li id="nav_sub"><a href="#">更多&nbsp;<span id="spanTip">↓</span></a>
+        <ul class="nav_sub">
+          <li><a href="photoes_show.html">照片墙</a></li>
+          <li><a href="person.html">个人中心</a></li>
+        </ul>
+        <input id="hidval" type="hidden" value="0" />
+      </li>
+      <li class="exit"> <img src="images/dynamic/exit.png" alt="exit" /> </li>
+    </ul>
             <!--=== nav end ===-->
 
 		</div><!--=== header end ===-->
 	</div>
     
   <!--=== main start ===-->
-  <!--
 
-  		<div class="underload">
-           <img src="./images/02.jpg" alt="images"  class="upload"/>
-           <a>上传照片</a>
-     <INPUT id="file" type="file" size="20" name="file" runat="server">
-      </div>
-     -->
      <div class="center">
       <!--上传照片开始-->
        <div class="upload">
+        
             <form class="up_l" enctype="multipart/form-data" name="form1">
-          <input id="f" type="file" name="f" onchange="change()" />
-          <div class="uploading"></div>
-          <p >
-            <img id="preview" alt="" name="pic" />
-          </p>
-        </form>
+              <div class="up">上传头像</div>
+                <input id="f" type="file" name="f" onchange="change()" class="finput" />
+             <img id="preview" class="preview" alt="" name="pic" />
+              <img src="./images/picture.png" alt="" class="self">
+         </form>
+
          <!--上传照片结束-->
          <div class="up_r">
           <h3>秋水伊人<span>id:1534856</span></h3>
@@ -131,9 +98,14 @@ window.onload = function ()
        <div class="content">
         
             <li class="me"><q>向朋友介绍一下自己吧，比如兴趣爱好特长！</q></li>
-            <li class="picture">形象照(0)</li>
-            <img src="./images/01.jpg" alt="image" class="pic"/>
-            <p class="uppic">快上传自己的形象照吧，让更多的小伙伴认识你哦~~~</p>
+            <li class="picturer">形象照(0)</li>
+           <div class="show">
+            <div id="previews" class="popo">
+            <img id="imghead" border=0 src="./images/add.png" width="120" height="120" />
+           </div>
+        <input type="file" onchange="previewImage(this)" class="butt"/>
+          </div>
+                    <p class="uppic">快上传自己的形象照吧，让更多的小伙伴认识你哦~~~</p>
    
         </div>
         <!--tab选项卡开始-->
@@ -167,38 +139,46 @@ window.onload = function ()
             <ul>
                 <li class="basic">
               <h2>基本资料</h2>
-              <p><span>昵称：</span>秋水伊人</p> 
-              <p><span>性别： </span>     女</p>   
-              <p><span>婚姻状况：</span>未婚</p>  
-              <p><span>我在寻找：</span>恋人</p>  
-              <p><span>身高：</span>32</p> 
-              <p><span>体重：</span>32</p> 
-              <p><span>居住地：</span>32</p> 
-              <p><span>学历：</span>32</p>  
-              <p><span>毕业院系：</span>32</p> 
-              <p><span>行业：</span>32</p> 
-              <p><span>月收入：</span>32</p> 
-                </li>
-                <li class="basic">
-              <h2>详细资料</h2>
-              <p><span>昵称：</span>秋水伊人</p> 
-              <p><span>性别： </span>     女</p>   
-              <p><span>婚姻状况：</span>未婚</p>  
-              <p><span>我在寻找：</span>恋人</p>  
-              <p><span>身高：</span>32</p> 
-              <p><span>体重：</span>32</p> 
-              <p><span>居住地：</span>32</p> 
-              <p><span>学历：</span>32</p>  
-              <p><span>毕业院系：</span>32</p> 
-              <p><span>行业：</span>32</p> 
-              <p><span>月收入：</span>32</p> 
+              <p>昵称：<span ondblclick="ShowElement(this)"> 秋水伊人</span></p>
+                <p>性别：<span ondblclick="ShowElement(this)"> 女</span></p>   
+                  <p>年龄：<span ondblclick="ShowElement(this)">24</span></p>  
+                    <p>身高：<span ondblclick="ShowElement(this)">170cm</span></p> 
+                     <p>居住地：<span ondblclick="ShowElement(this)">河南省信阳市丽江春</span></p> 
+                  <p>毕业院系：<span ondblclick="ShowElement(this)">郑州大学西亚斯国际学院</span></p>  
+                <p>学历：<span ondblclick="ShowElement(this)">本科</span></p> 
+              <p>行业：<span ondblclick="ShowElement(this)">IT行业</span></p> 
+            <p>婚姻状况：<span ondblclick="ShowElement(this)">未婚</span></p> 
+          </li>
+         <li class="basic">
+           <h2>详细资料</h2>
+             <p>昵称：<span ondblclick="ShowElement(this)"> 秋水伊人</span></p>
+                <p>性别：<span ondblclick="ShowElement(this)"> 女</span></p>   
+                  <p>婚姻状况：<span ondblclick="ShowElement(this)">未婚</span></p>  
+                    <p>我在寻找：<span ondblclick="ShowElement(this)">恋人</span></p>  
+                    <p>身高：<span ondblclick="ShowElement(this)">32</span></p> 
+                      <p>体重：<span ondblclick="ShowElement(this)">32</span></p> 
+                     <p>居住地：<span ondblclick="ShowElement(this)">32</span></p> 
+                  <p>学历：<span ondblclick="ShowElement(this)">32</span></p>  
+                <p>毕业院系：<span ondblclick="ShowElement(this)">32</span></p> 
+              <p>行业：<span ondblclick="ShowElement(this)">32</span></p> 
+            <p>月收入：<span ondblclick="ShowElement(this)">32</span></p> 
                 </li>
               
             </ul>
             <!--个人资料开始-->
             <!--我的相册开始-->
              <ul>
-                <li>改变网页背景颜色</li>
+                <li>
+                  <div class="album">
+                    <dl>
+                      <dd><a href="##"><img src="./images/04.jpg" alt="img"></a></dd>
+                      <dt>贴图相册</dt>
+                    </dl>
+                  </div>
+             
+
+
+                </li>
               
             </ul>
             <!--个人资料结束-->
@@ -233,47 +213,168 @@ window.onload = function ()
           <!--话题结束-->
 
           <!--访客开始-->
-          <div class="dls">
+         <div class="pro-switch">
+    <div class="slider">
+      <div class="flexslider">
+        <ul class="slides">
+            <li>
+             <div class="dls">
         <dl>
-            <dt class="per"><a href="###"><img src="./images/01.jpg" height="100" width="200"></a></dt>
-            <dd class="month">4月17号</dt>
+            <dt class="per"><a href="###"><img src="./images/003.jpg" height="100" width="200"></a></dt>
+            <dd class="month"><a href="">4月17号</a></dt>
           </dl>
           <dl>
-            <dt class="per"><a href="###"><img src="./images/02.jpg" height="100" width="200"></a></dt>
-            <dd class="month">4月17号</dt>
+            <dt class="per"><a href="###"><img src="./images/003.jpg" height="100" width="200"></a></dt>
+            <dd class="month"><a href="">4月17号</a></dt>
           </dl>
           <dl>
-            <dt class="per"><a href="###"><img src="./images/03.jpg" height="100" width="200"></a></dt>
-            <dd class="month">4月17号</dt>
+            <dt class="per"><a href="###"><img src="./images/003.jpg" height="100" width="200"></a></dt>
+            <dd class="month"><a href="">4月17号</a></dt>
           </dl>
           <dl>
-            <dt class="per"><a href="###"><img src="./images/03.jpg" height="100" width="200"></a></dt>
-            <dd class="month">4月17号</dt>
+            <dt class="per"><a href="###"><img src="./images/003.jpg" height="100" width="200"></a></dt>
+            <dd class="month"><a href="">4月17号</a></dt>
           </dl>
           <dl>
-            <dt class="per"><a href="###"><img src="./images/03.jpg" height="100" width="200"></a></dt>
-            <dd class="month">4月17号</dt>
+            <dt class="per"><a href="###"><img src="./images/003.jpg" height="100" width="200"></a></dt>
+            <dd class="month"><a href="">4月17号</a></dt>
           </dl>
           <dl>
-            <dt class="per"><a href="###"><img src="./images/03.jpg" height="100" width="200"></a></dt>
-            <dd class="month">4月17号</dt>
+            <dt class="per"><a href="###"><img src="./images/003.jpg" height="100" width="200"></a></dt>
+            <dd class="month"><a href="">4月17号</a></dt>
           </dl>
-             <ul class="gtlist">
-              <li class="gt"><a href="###">> </a></li>
-              <li class="gt"><a href="###"><</a></li>
-          </ul>
+      
           </div>
+          </li>
+  
+          <li>
+            <div class="dls">
+        <dl>
+            <dt class="per"><a href="###"><img src="./images/003.jpg" height="100" width="200"></a></dt>
+            <dd class="month"><a href="">4月17号</a></dt>
+          </dl>
+          <dl>
+            <dt class="per"><a href="###"><img src="./images/003.jpg" height="100" width="200"></a></dt>
+            <dd class="month"><a href="">4月17号</a></dt>
+          </dl>
+          <dl>
+            <dt class="per"><a href="###"><img src="./images/003.jpg" height="100" width="200"></a></dt>
+            <dd class="month"><a href="">4月17号</a></dt>
+          </dl>
+          <dl>
+            <dt class="per"><a href="###"><img src="./images/003.jpg" height="100" width="200"></a></dt>
+            <dd class="month"><a href="">4月17号</a></dt>
+          </dl>
+          <dl>
+            <dt class="per"><a href="###"><img src="./images/003.jpg" height="100" width="200"></a></dt>
+            <dd class="month"><a href="">4月17号</a></dt>
+          </dl>
+          <dl>
+            <dt class="per"><a href="###"><img src="./images/003.jpg" height="100" width="200"></a></dt>
+            <dd class="month"><a href="">4月17号</a></dt>
+          </dl>
+      
+          </div>
+          </li>
+          <li>
+            <div class="dls">
+        <dl>
+            <dt class="per"><a href="###"><img src="./images/003.jpg" height="100" width="200"></a></dt>
+            <dd class="month"><a href="">4月17号</a></dt>
+          </dl>
+          <dl>
+            <dt class="per"><a href="###"><img src="./images/003.jpg" height="100" width="200"></a></dt>
+            <dd class="month"><a href="">4月17号</a></dt>
+          </dl>
+          <dl>
+            <dt class="per"><a href="###"><img src="./images/003.jpg" height="100" width="200"></a></dt>
+            <dd class="month"><a href="">4月17号</a></dt>
+          </dl>
+          <dl>
+           <dt class="per"><a href="###"><img src="./images/003.jpg" height="100" width="200"></a></dt>
+            <dd class="month"><a href="">4月17号</a></dt>>
+          </dl>
+          <dl>
+            <dt class="per"><a href="###"><img src="./images/003.jpg" height="100" width="200"></a></dt>
+            <dd class="month"><a href="">4月17号</a></dt>
+          </dl>
+          <dl>
+            <dt class="per"><a href="###"><img src="./images/003.jpg" height="100" width="200"></a></dt>
+            <dd class="month"><a href="">4月17号</a></dt>
+          </dl>
+      
+          </div>
+          </li>
+         <li>
+             <div class="dls">
+        <dl>
+            <dt class="per"><a href="###"><img src="./images/003.jpg" height="100" width="200"></a></dt>
+            <dd class="month"><a href="">4月17号</a></dt>
+          </dl>
+          <dl>
+            <dt class="per"><a href="###"><img src="./images/003.jpg" height="100" width="200"></a></dt>
+            <dd class="month"><a href="">4月17号</a></dt>
+          </dl>
+          <dl>
+            <dt class="per"><a href="###"><img src="./images/003.jpg" height="100" width="200"></a></dt>
+            <dd class="month"><a href="">4月17号</a></dt>
+          </dl>
+          <dl>
+            <dt class="per"><a href="###"><img src="./images/003.jpg" height="100" width="200"></a></dt>
+            <dd class="month"><a href="">4月17号</a></dt>
+          </dl>
+          <dl>
+            <dt class="per"><a href="###"><img src="./images/003.jpg" height="100" width="200"></a></dt>
+            <dd class="month"><a href="">4月17号</a></dt>
+          </dl>
+          <dl>
+            <dt class="per"><a href="###"><img src="./images/003.jpg" height="100" width="200"></a></dt>
+            <dd class="month"><a href="">4月17号</a></dt>
+          </dl>
+      
+          </div>
+          </li>
+  
+          <li>
+            <div class="dls">
+        <dl>
+            <dt class="per"><a href="###"><img src="./images/003.jpg" height="100" width="200"></a></dt>
+            <dd class="month"><a href="">4月17号</a></dt>
+          </dl>
+          <dl>
+            <dt class="per"><a href="###"><img src="./images/003.jpg" height="100" width="200"></a></dt>
+            <dd class="month"><a href="">4月17号</a></dt>
+          </dl>
+          <dl>
+            <dt class="per"><a href="###"><img src="./images/003.jpg" height="100" width="200"></a></dt>
+            <dd class="month"><a href="">4月17号</a></dt>
+          </dl>
+          <dl>
+            <dt class="per"><a href="###"><img src="./images/003.jpg" height="100" width="200"></a></dt>
+            <dd class="month"><a href="">4月17号</a></dt>
+          </dl>
+          <dl>
+            <dt class="per"><a href="###"><img src="./images/003.jpg" height="100" width="200"></a></dt>
+            <dd class="month"><a href="">4月17号</a></dt>
+          </dl>
+          <dl>
+            <dt class="per"><a href="###"><img src="./images/003.jpg" height="100" width="200"></a></dt>
+            <dd class="month"><a href="">4月17号</a></dt>
+          </dl>
+      
+          </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
           <!--访客结束-->
-       
-            <p class="see">今日浏览：<span>12908</span> </p>
+
+       <div class="last">
+        <p class="see">今日浏览：<span>12908</span> </p>
             <p class="see">总浏览：<span>12908</span> </p>
-
-          
-
-
-
-
-
+          </div>
+           
                  </div>
           
        </div>
